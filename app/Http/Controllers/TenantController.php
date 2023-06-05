@@ -116,7 +116,8 @@ class TenantController extends Controller
 
         // return redirect()->route('dashboard', ['tenant' => $tenant->id]);
     //    return redirect('http://'.$tenant->domains->first()->domain.':8000'.'/loguin/naze/'.$user->id);
-       return redirect('http://'.$tenant->domains->first()->domain.':8000'.'/dashboard');
+      // return redirect('http://'.$tenant->domains->first()->domain.':8000'.'/dashboard');
+       return redirect('http://'.$tenant->domains->first()->domain.'/dashboard');
 
        // //->with('success', 'Inquilino creado exitosamente.');
     }
