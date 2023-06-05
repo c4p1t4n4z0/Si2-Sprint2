@@ -116,6 +116,16 @@ class DatabaseSeeder extends Seeder
                 }
             }
         }
+        public function areas(){
+            $areas = ['Administracion']
+            foreach($areas as $a){
+                $r = new Area();
+            $r->nombre = $a;
+            $r->descripcion = $a;
+            $r->save();
+            }
+            
+        }
 
         public function xd(){
 
