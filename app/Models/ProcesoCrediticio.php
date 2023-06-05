@@ -10,17 +10,14 @@ class ProcesoCrediticio extends Model
     use HasFactory;
 
     public function empleado(){
-        //hasMany{tien mucho} //metodo para dar la primari key
-    return $this->belongsTo(Empleado::class);
+     return $this->belongsTo(Empleado::class);
     }
 
     public function cliente(){
-        //hasMany{tien mucho} //metodo para dar la primari key
     return $this->belongsTo(Cliente::class);
     }
 
     public function tipo_credito(){
-        //hasMany{tien mucho} //metodo para dar la primari key
     return $this->belongsTo(TipoCredito::class);
     }
 

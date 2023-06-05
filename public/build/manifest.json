@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-704fc01b.css",
+    "file": "assets/app-6256beca.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
@@ -8,5 +8,15 @@
     "file": "assets/app-e7c8c463.js",
     "isEntry": true,
     "src": "resources/js/app.js"
+  },
+  "resources/js/modal_uno.js": {
+    "file": "assets/modal_uno-68edcc1e.js",
+    "isEntry": true,
+    "src": "resources/js/modal_uno.js"
+  },
+  "resources/js/modals.js": {
+    "file": "assets/modals-a25c4327.js",
+    "isEntry": true,
+    "src": "resources/js/modals.js"
   }
 }

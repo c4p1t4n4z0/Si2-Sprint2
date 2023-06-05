@@ -34,7 +34,14 @@ Route::middleware([
         });
     // });
 
+    // grupo de rutas para el inquilino logeuados
+    Route::middleware('auth')->group(function () {
+        Route::get('/dashboard', function () {
+            // dd('hola xd  es es dashboars');
+            return view('VistasTenancyInquilinos.dashboard');
+        })->name('dashboard');
 
+        Route::resource('tarea', App\Http\Controllers\Inquilinos\TareaController::class)->names('tarea');
         Route::resource('empleados', App\Http\Controllers\Inquilinos\EmpleadoController::class)->names('empleados');
         Route::resource('clientes', App\Http\Controllers\Inquilinos\ClienteController::class)->names('clientes');
         Route::resource('areas', App\Http\Controllers\Inquilinos\AreaController::class)->names('areas');
@@ -49,15 +56,10 @@ Route::middleware([
         Route::get('creditos/create2', [App\Http\Controllers\Inquilinos\CreditosController::class,'create2'])->name('creditos.create2');
         Route::resource('creditos', App\Http\Controllers\Inquilinos\CreditosController::class)->except('create')->names('creditos');
         Route::get('creditos/create/{cliente}', [App\Http\Controllers\Inquilinos\CreditosController::class,'create'])->name('creditos.create');
+        Route::get('creditos/documento/{credito}', [App\Http\Controllers\Inquilinos\CreditosController::class,'create_documento'])->name('creditos.create.documento');
+        Route::post('creditos/documento/{credito}', [App\Http\Controllers\Inquilinos\CreditosController::class,'store_documento'])->name('creditos.store.documento');
 
-    // grupo de rutas para el inquilino logeuados
-    Route::middleware('auth')->group(function () {
-        Route::get('/dashboard', function () {
-            // dd('hola xd  es es dashboars');
-            return view('VistasTenancyInquilinos.dashboard');
-        })->name('dashboard');
 
-        Route::resource('tarea', App\Http\Controllers\Inquilinos\TareaController::class)->names('tarea');
     });
 
 

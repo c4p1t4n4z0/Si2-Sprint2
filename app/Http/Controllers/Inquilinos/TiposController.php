@@ -24,7 +24,7 @@ class TiposController extends Controller
 
     public function store(Request $request )
     {
-        dd($request);
+        // dd($request);
         $request->validate([
             'nombre' => ['required','string', 'max:255'],
             'descripcion' => ['string','max:500'],
@@ -36,6 +36,7 @@ class TiposController extends Controller
 
         //ahora crear la tabla intermedia
         foreach ($request->requisitos as $rr) {
+            // dd( $tipo->id,$rr);
             DetalleRequisito::create([
                 'id_tipo_credito' => $tipo->id,
                 'id_requisito' => $rr

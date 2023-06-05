@@ -82,7 +82,7 @@
                                 class="mt-0 mb-1 text-gray-500 font-normal   h-8 pl-3 text-sm
                                     border-gray-300 rounded border
                                     focus:outline-none focus:border focus:border-blue-900 capitalize"
-                                id="monto" name="monto" type="text" autocomplete="off"
+                                id="monto" name="monto" type="number" step="0.1"
                                 value="{{ old('monto') }}" />
                         </div>
 

@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('detalle_requisitos', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_requisito');
-            $table->unsignedBigInteger('id_proceso_crediticio');
+            $table->unsignedBigInteger('id_tipo_credito');
             $table->foreign('id_requisito')->references('id')->on('requisitos');
-            $table->foreign('id_proceso_crediticio')->references('id')->on('proceso_crediticios');
+            $table->foreign('id_tipo_credito')->references('id')->on('tipo_creditos');
         });
     }
 

@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('descripcion');
             // $table->float('plazo');//procesod
-            $table->float('interes');
-            $table->float('monto_maximo');
+            $table->integer('interes');
+            $table->double('monto_maximo');
             $table->float('monto_minimo');
             $table->string('estado')->default('activo');
             $table->timestamps();

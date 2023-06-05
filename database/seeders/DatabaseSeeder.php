@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Area;
 use App\Models\Beneficio;
 use App\Models\DetalleBeneficio;
 use App\Models\Plan;
@@ -33,8 +34,8 @@ class DatabaseSeeder extends Seeder
         // $this->beneficios();
         // $this->DetalleBeneficios();
 
-
         $this->xd();
+        $this->areas();
     }
 
     public function planes(){
@@ -117,14 +118,14 @@ class DatabaseSeeder extends Seeder
             }
         }
         public function areas(){
-            $areas = ['Administracion']
+            $areas = ["Departamento de Crédito", "Departamento de Ventas", "Departamento de Servicio al Cliente", "Departamento de Cobranzas", "Departamento de Análisis de Riesgo", "Departamento Legal", "Departamento de Operaciones", "Departamento de Control de Calidad"];
             foreach($areas as $a){
                 $r = new Area();
-            $r->nombre = $a;
-            $r->descripcion = $a;
-            $r->save();
+                $r->nombre = $a;
+                $r->descripcion = $a;
+                $r->save();
             }
-            
+
         }
 
         public function xd(){

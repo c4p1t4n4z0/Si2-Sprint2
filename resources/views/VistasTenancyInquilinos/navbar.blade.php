@@ -56,13 +56,13 @@
         [
             'name' => 'Creditos',
             'url' => route('creditos.index'),
-            'active' => request()->routeIs('creditos.*'), //verifica si se esta en la rota atual
+            'active' => request()->routeIs(['creditos.*','tipos.*']), //verifica si se esta en la rota atual
         ],
-        [
-            'name' => 'Prueba',
-            'url' => route('prueba'),
-            'active' => request()->routeIs('prueba'), //verifica si se esta en la rota atual
-        ],
+        // [
+        //     'name' => 'Prueba',
+        //     'url' => route('prueba'),
+        //     'active' => request()->routeIs('prueba'), //verifica si se esta en la rota atual
+        // ],
 
     ];
 @endphp

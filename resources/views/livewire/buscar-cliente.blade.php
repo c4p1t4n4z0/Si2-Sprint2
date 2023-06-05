@@ -16,12 +16,12 @@
                     border-gray-300 rounded border
                     focus:outline-none focus:border focus:border-blue-900 capitalize"
             wire:model="buscar"  wire:keydown="buscar"
-            id="paterno" name="ci_cliente" type="text" autocomplete="off"  />
+            id="paterno"  type="text" autocomplete="off"  />
             <div class="flex flex-col space-y-1 relative  ">
                 {{-- //hacer un foreach de los clientes --}}
               @foreach ($clientes as $cliente )
               @if ($estado)
-              <button class="btn-gray-100 absolute w-full text-gray-600 opacity-90" wire:click.prevent='rellenar_ci("{{ $cliente->name }} {{ $cliente->apellido }}")'>
+              <button class="btn-gray-100 absolute w-full text-gray-600 opacity-90" wire:click.prevent='rellenar_ci({{ $cliente->id_usuario}})'>
                 <span> {{ $cliente->name}}</span>
                 <span> {{ $cliente->apellido}}</span>
                 <span>- CI:{{ $cliente->ci}}</span>
@@ -30,6 +30,7 @@
               @endforeach
             </div>
         </div>
+        <input type="hidden" name="id_cliente" value="" wire:model="caja_id" />
 
 
     <div class="flex flex-col col-span-2 ">
@@ -46,7 +47,7 @@
         </div>
         <!-- mientras escribo, que busque en la tabla cliente -->
         <input class="input-xd "
-         id="nombre" name="nombre" type="text" autocomplete="off" value="{{ $caja_nombre }}" />
+         id="nombre" type="text" autocomplete="off" value="{{ $caja_nombre }}" />
 
     </div>
 

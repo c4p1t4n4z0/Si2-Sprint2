@@ -9,7 +9,7 @@ class Requisito extends Model
 {
     use HasFactory;
 
-    public function tipo_creditos(){
-        return $this->belongsToMany(TipoCredito::class);
+    public function detalles(){
+        return $this->hasMany(DetalleRequisito::class);
     }
 }

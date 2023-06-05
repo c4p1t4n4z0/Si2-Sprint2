@@ -41,13 +41,14 @@ class EmpleadoController extends Controller
      */
     public function store(Request $r,)
     {
+        // dd($r);
         try {
         DB::transaction(function () use ($r) {
         $usuario = new User();
         $usuario->name = $r->nombre;
-        // $usuario->ap_paterno = $r->paterno;
+        $usuario->apellido = $r->paterno;
         // $usuario->ap_materno = $r->materno;
-        // $usuario->ci = $r->cedula;
+        $usuario->ci = $r->cedula;
         // $usuario->domicilio = $r->domicilio;
         // $usuario->fecha_nac = $r->fecha_nac;
         // $usuario->telefono = $r->telefono;
@@ -59,9 +60,9 @@ class EmpleadoController extends Controller
         //     $fotos = time() . '-' . $file->getClientOriginalName();
         //     $subirImagen = $r->file('foto')->move($destino, $fotos);
         // } else {
-        //    $fotos = "defecto.png"; //DEFAUDL
+           $fotos = "defecto.png"; //DEFAUDL
         // }
-        // $usuario->foto = $fotos;
+        $usuario->foto = $fotos;
         $usuario->save();
 
         $emp = new Empleado();

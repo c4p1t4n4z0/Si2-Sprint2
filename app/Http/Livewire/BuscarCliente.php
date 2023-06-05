@@ -11,6 +11,7 @@ class BuscarCliente extends Component
 {
     public $buscar = '';
     public $caja_nombre = '';
+    public $caja_id = '';
     public $estado = true;
     public $tenant = null;
     //contructr
@@ -25,10 +26,14 @@ class BuscarCliente extends Component
         $this->estado = true;
     }
 
-    public function rellenar_ci( $nom)
+    public function rellenar_ci($cliente)
     {
-        // dd('llegamos');
-        $this->caja_nombre = $nom;
+        tenancy()->initialize($this->tenant);
+        $cliente = User::where('id',$cliente)->first();
+        $this->caja_nombre = $cliente->name;
+        $this->buscar = $cliente->ci;
+        $this->caja_id = $cliente->id;
+        tenancy()->end();
         $this->estado = false;
     }
 

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('apellido')->nullable();
             // $table->string('ap_materno')->nullable();
-            $table->string('ci');
+            $table->string('ci')->nullable();
             $table->date('fecha_nac')->nullable();
             $table->string('telefono')->nullable();
             $table->string('foto')->nullable();

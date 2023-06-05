@@ -13,36 +13,6 @@
         </a>
         </div>
 
-        <div class=" flex justify-between items-center mx-5">
-            @if (session('venta_cancelada'))
-                <p class="text-white py-2 px-4 bg-lime-500 text-sm text-center rounded-xl  w-full h-full sm:w-fit m-2">
-                    {{ session('venta_cancelada') }}
-                </p>
-            @endif
-
-            @if (session('CotizacionEliminado'))
-                <p class="text-white bg-lime-500 p-2 text-sm rounded-xl mx-8">
-                    Cotizacion Nro: {{ session('CotizacionEliminado') }} Eliminada correctamente
-                </p>
-            @endif
-
-            @if (session('CotizacionStore'))
-                <p class="text-white py-2 px-4 bg-lime-500 text-sm text-center rounded-xl  w-full h-full sm:w-fit   m-2">
-                    {{ session('CotizacionStore') }}
-                </p>
-            @endif
-
-            @if (session('CotizacionUpdate'))
-                <p class="text-white bg-lime-500 p-2 text-sm rounded-xl mx-8">
-                    {{ session('CotizacionUpdate') }}
-                </p>
-            @endif
-
-
-
-        </div>
-
-
         <div class="my-4  shadow-xs">
             <!-- reemplace w-full por mx-8 -->
             <div class="w-full overflow-x-auto rounded-lg  px-1 bg-white pb-3 pt-1 ">
@@ -52,11 +22,12 @@
                         {{-- class="text-xs  text-center font-semibold tracking-wide text-white uppercase border-b dark:border-gray-700 bg-gray-500  dark:bg-gray-800 "> --}}
                             class="text-xs  text-left font-semibold tracking-wide bg-white text-gray-500 dark:border-gray-700 dark:bg-gray-800 ">
                             <th class="py-3 text-center   ">Id </th>
-                            <th class="">Nombre</th>
+                            <th class=" pl-4">Nombre</th>
                             <th class="px-4 py-3 ">Descripcion</th>
-                            <th class="px-4 py-3 ">Plazos</th>
 
                             <th class="px-4 py-3 ">Interes</th>
+                            <th class="px-4 py-3 ">Monto minmo </th>
+                            <th class="px-4 py-3 ">Monto maximo</th>
 
 
                             <th class="px-8 py-3 ">Acciones </th>
@@ -74,10 +45,10 @@
                                 </td>
                                 <td class="px-4 py-3 text-sm capitalize ">{{ $tipo->nombre }} </td>
                                 <td class="px-4 py-3 text-xs "> {{ $tipo->descripcion }}</td>
-
-                                <td class="px-4 py-3 text-xs "> {{ $tipo->plazos }} anios </td>
-
                                 <td class="px-4 py-3 text-xs "> {{ $tipo->interes }} %</td>
+                                <td class="px-4 py-3 text-xs "> {{ $tipo->monto_minimo }} Bs </td>
+                                <td class="px-4 py-3 text-xs "> {{ $tipo->monto_maximo }} Bs </td>
+
 
 
 

@@ -2,7 +2,7 @@
     <x-container class="mt-4">
 <div class="relative overflow-x-auto">
     <div class="flex flex-row-reverse justify-between mb-2">
-        <a href="{{ route('tenant.create') }}" class="btn-blue"> Crear </a>
+        {{-- <a href="{{ route('tenant.create') }}" class="btn-blue"> Crear </a> --}}
         @if (session('success'))
             <div class="bg-green-200 text-green-800 p-2 rounded font-mono ">
                 {{ session('success') }}

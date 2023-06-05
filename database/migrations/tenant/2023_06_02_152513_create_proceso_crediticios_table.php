@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('estado')->default('en_revicion');
             $table->date('fecha_solicitud');
             $table->date('fecha_aprobacion')->nullable();
-            $table->string('observacion');
+            $table->string('observacion')->nullable();
             $table->unsignedBigInteger('id_empleado');
             $table->unsignedBigInteger('id_cliente');
             $table->unsignedBigInteger('id_tipo_credito');

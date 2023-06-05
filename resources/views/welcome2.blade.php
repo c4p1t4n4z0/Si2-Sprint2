@@ -23,7 +23,7 @@
                     <nav class="navbar fixed-top navbar-expand-lg bg-black" style="box-shadow: none">
                         <div class="container px-5">
                             <a class="navbar-brand font-weight-bolder text-white ms-lg-0 ms-3 " href="#">
-                            Nombre de la empresa 
+                            Nombre de la empresa
                             </a>
                             <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false"
@@ -43,7 +43,7 @@
                                             href="https://api.whatsapp.com/send?phone=+59178491807&text=Hola,%20mas%20informacion%20del%20servicio">Contacto whatsapp</a>
                                     </li>
                                     <li class="nav-item"><a class="nav-link text-white"
-                                            href="#">Inicia sesión</a></li>
+                                            href="{{ route('login') }}">Inicia sesión </a></li>
                                 </ul>
                             </div>
                         </div>

@@ -20,10 +20,10 @@
                     <a href="{{ route('empresa.create') }}" class="flex hover:scale-105 transition cursor-pointer  px-2 py-1 rounded-lg shadow shadow-gray-50">Registrarse
                         {{-- <ion-icon class="text-2xl ml-2 " name="add-circle-outline"></ion-icon> --}}
                          </a>
-                    <p class="btn-teal flex h-8 ">
+                    <a href="{{ route('login') }}" class="btn-teal flex h-8 ">
                         iniciar session
                         <ion-icon class="text-2xl ml-1" name="log-in-outline"></ion-icon>
-                    </p>
+                    </a>
                 </div>
             </div>
         </div>
@@ -62,20 +62,20 @@
                         </div>
                         <!-- List -->
                         <ul role="list" class="space-y-5 my-7">
-                            <li class="flex space-x-3">
+                            <a href="{{ route('empresa.create') }}" class="flex space-x-3">
                                 <!-- Icon -->
                                 <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-blue-600 dark:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                                 <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">2 team members</span>
-                            </li>
-                            <li class="flex space-x-3">
+                            </a>
+                            <a href="{{ route('empresa.create') }}" class="flex space-x-3">
                                 <!-- Icon -->
                                 <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-blue-600 dark:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                                 <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">20GB Cloud storage</span>
-                            </li>
+                            </a>
 
 
                         </ul>
-                        <button type="button" class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Aqui iran las acciones</button>
+                        <button type="button" class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Aquirir Plan</button>
                     </div>
 
 
