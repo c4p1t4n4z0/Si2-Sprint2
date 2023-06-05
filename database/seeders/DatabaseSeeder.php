@@ -8,6 +8,7 @@ use App\Models\Area;
 use App\Models\Beneficio;
 use App\Models\DetalleBeneficio;
 use App\Models\Plan;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
@@ -21,14 +22,17 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // \App\Models\User::factory(10)->create();
-        \App\Models\User::factory()->create([
-            'name' => 'admin',
-            'email' => 'admin@gmail.com',
-            'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-            'remember_token' => Str::random(10),
-        ]);
-
+        // \App\Models\User::factory()->create([
+        //     joal como estas col
+        // ]);
+        $user = new User();
+        $user->name = 'admin';
+        $user->email = 'admin@gmail.com';
+        $user->email_verified_at = now();
+        $user->password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'; // password
+        $user->remember_token = Str::random(10);
+        $user->save();
+        
         // $this->planes();
         // $this->beneficios();
         // $this->DetalleBeneficios();
