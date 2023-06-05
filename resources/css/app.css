@@ -1,0 +1,104 @@
+/* @import url(./modal.css); */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* creacion de clases, apply significa aplicar   */
+.btn {
+    @apply rounded-md px-2 py-1 border border-gray-600;
+}
+
+.btn-red {
+    @apply rounded-md px-2 py-1 capitalize bg-red-600 text-white
+            hover:bg-red-500 cursor-pointer transition hover:scale-110;
+}
+
+.btn-green {
+    @apply rounded-md px-2 py-1 capitalize bg-green-600 text-white
+            hover:bg-green-500 cursor-pointer transition hover:scale-110;
+}
+
+.btn-blue {
+    @apply rounded-md px-2 py-1 capitalize bg-blue-600 text-white
+            hover:bg-blue-500 cursor-pointer transition hover:scale-110;
+}
+
+.btn-blue-oscuro {
+    @apply rounded-md px-2 py-1 capitalize bg-blue-800 text-white
+            hover:bg-blue-700 cursor-pointer transition hover:scale-110;
+}
+
+.btn-yellow {
+    @apply rounded-md px-2 py-1 capitalize bg-yellow-600 text-white
+            hover:bg-yellow-500 cursor-pointer transition hover:scale-110;
+}
+
+.btn-gray {
+    @apply rounded-md px-2 py-1 capitalize bg-gray-700 text-white
+            hover:bg-gray-600 cursor-pointer transition hover:scale-110;
+}
+
+.btn-gray-100 {
+    @apply rounded-md px-2 py-1 capitalize bg-white shadow-md
+            hover:bg-gray-100 cursor-pointer transition hover:scale-105;
+}
+
+.btn-purple {
+    @apply rounded-md px-2 py-1 capitalize bg-purple-600 text-white
+            hover:bg-purple-500 cursor-pointer transition hover:scale-110;
+}
+
+
+.btn-teal {
+    @apply rounded-md px-2 py-1 capitalize bg-teal-600 text-white
+            hover:bg-teal-500 cursor-pointer transition hover:scale-110;
+}
+
+
+.p-2xl{
+    @apply text-gray-500 text-2xl font-bold font-mono  uppercase
+}
+
+
+.label-xd{
+    @apply text-gray-800 text-sm font-semibold mb-1  leading-tight tracking-normal
+}
+
+.input-xd{
+    @apply  mb-1 text-gray-500 font-normal   h-8 pl-3 text-sm
+    border-gray-300 rounded border
+    focus:outline-none focus:border focus:border-blue-900 capitalize
+}
+
+.area-xd{
+    @apply mt-0 mb-1 text-gray-500 font-normal w-full  pl-3 text-sm
+    border-gray-300 rounded border
+    focus:outline-none focus:border focus:border-blue-900 capitalize
+}
+
+
+.modal_open[open] {
+    animation: appear .15s cubic-bezier(0, 1.8, 1, 1.8);
+}
+
+.modal_fondo::backdrop {
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(52, 52, 52, 0.5));
+    backdrop-filter: blur(3px);
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateX(-3rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+
+
+
