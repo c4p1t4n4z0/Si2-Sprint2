@@ -79,8 +79,8 @@ class TenantController extends Controller
 
         //dandole dominio al inquilino
         $tenant->domains()->create([
-            // 'domain' => $request->get('id').'.'.'tenancy.test',//
-            'domain' => $request->get('id').'.'.'localhost',
+            'domain' => $request->get('id').'.'.'cristiancuellar.tech',
+            // 'domain' => $request->get('id').'.'.'localhost',
         ]);
 
         // cerar la empresadomain
