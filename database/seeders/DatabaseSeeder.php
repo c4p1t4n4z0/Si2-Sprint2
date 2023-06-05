@@ -21,7 +21,6 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // \App\Models\User::factory(10)->create();
-
         \App\Models\User::factory()->create([
             'name' => 'admin',
             'email' => 'admin@gmail.com',
@@ -30,9 +29,9 @@ class DatabaseSeeder extends Seeder
             'remember_token' => Str::random(10),
         ]);
 
-        $this->planes();
-        $this->beneficios();
-        $this->DetalleBeneficios();
+        // $this->planes();
+        // $this->beneficios();
+        // $this->DetalleBeneficios();
 
         // $this->xd();
         // $this->areas();
