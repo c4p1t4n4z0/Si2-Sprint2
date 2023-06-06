@@ -19,9 +19,9 @@ return [
      */
     //este sera el domincio central de la aplicacion
     'central_domains' => [
-        // '127.0.0.1',
-        // 'localhost',
-        'cristiancuellar.tech',
+        '127.0.0.1',
+        'localhost',
+        // 'cristiancuellar.tech',
     ],
 
     /**

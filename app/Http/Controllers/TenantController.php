@@ -47,18 +47,13 @@ class TenantController extends Controller
 
     public function create()
     {
-    $planes = Plan::all();
-       return view('VistasTenant.create',compact('planes'));
+        $planes = Plan::all();
+        return view('VistasTenant.create',compact('planes'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         // dd($request);
-        // deberia estar en un tricash
-        //validar la id
         $request->validate(
             [
                 'id' => 'required',
@@ -74,13 +69,10 @@ class TenantController extends Controller
         //esta creanfo un inquilino, //falta aniadrile nomreb
         $tenant = Tenant::create($request->only('id'));
 
-        // $t->save();
-            //   dd($tenant);
-
         //dandole dominio al inquilino
         $tenant->domains()->create([
-            'domain' => $request->get('id').'.'.'cristiancuellar.tech',
-            // 'domain' => $request->get('id').'.'.'localhost',
+            // 'domain' => $request->get('id').'.'.'cristiancuellar.tech',
+            'domain' => str_replace('http://',$request->get('id').'.',env('APP_URL')),
         ]);
 
         // cerar la empresadomain
@@ -97,10 +89,6 @@ class TenantController extends Controller
 
         //crear usuario
        //creacion de usuario
-
-
-
-
        //acceder a la base de datos
     tenancy()->initialize($tenant);
         $user = User::create([
@@ -115,11 +103,9 @@ class TenantController extends Controller
         // dd($tenant->domains->first()->domain.'/dashboard');
 
         // return redirect()->route('dashboard', ['tenant' => $tenant->id]);
-    //    return redirect('http://'.$tenant->domains->first()->domain.':8000'.'/loguin/naze/'.$user->id);
-      // return redirect('http://'.$tenant->domains->first()->domain.':8000'.'/dashboard');
-       return redirect('http://'.$tenant->domains->first()->domain.'/dashboard');
 
-       // //->with('success', 'Inquilino creado exitosamente.');
+    //   return redirect($tenant->domains->first()->domain.'/dashboard');
+        return redirect('http://'.$tenant->domains->first()->domain.':8000/dashboard');
     }
 
     /**
