@@ -13,6 +13,9 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
+//roles spati
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class DatabaseSeeder extends Seeder
 {
@@ -36,9 +39,40 @@ class DatabaseSeeder extends Seeder
         // $this->beneficios();
         // $this->DetalleBeneficios();
 
+        //seeders para los tenanst
         $this->xd();
         $this->areas();
     }
+
+    public function roles_permisos(){
+        //roles
+        $Admin       = Role::create(['name' => 'Administrador']);
+        $empleado    = Role::create(['name' => 'Empleado']);
+        $clientes    = Role::create(['name' => 'Cliente']);
+
+        //permisos
+        //Dashboard
+        Permission::create(['name' => 'nav.dashboard'])->syncRoles([$empleado,$Admin,$clientes]);
+
+        //Empleados
+        Permission::create(['name' => 'nav.empleados'])->syncRoles([$empleado,$Admin]);
+
+        //Clientes
+        Permission::create(['name' => 'nav.clientes'])->syncRoles([$empleado,$Admin]);
+
+        //Areas
+        Permission::create(['name' => 'nav.areas'])->syncRoles([$empleado,$Admin]);
+
+        //Procesos Crediticios
+        Permission::create(['name' => 'nav.creditos'])->syncRoles([$empleado,$Admin]);
+        ////////////PRODUCTOS
+
+
+
+    }
+
+
+
 
     public function planes(){
         // Plan básico
