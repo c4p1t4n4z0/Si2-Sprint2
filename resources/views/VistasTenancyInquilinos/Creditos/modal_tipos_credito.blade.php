@@ -13,9 +13,9 @@
         </a>
         </div>
 
-        <div class="my-4  shadow-xs">
+        <div class="my-4  shadow-lg shadow-blue-300 p-5 ounded-lg border ">
             <!-- reemplace w-full por mx-8 -->
-            <div class="w-full overflow-x-auto rounded-lg  px-1 bg-white pb-3 pt-1 ">
+            <div class="w-full overflow-x-auto overflow-y-auto max-h-max rounded-lg  px-1 bg-white pb-3 pt-1 ">
                 <table class="w-full">
                     <thead>
                         <tr
@@ -98,6 +98,8 @@
                                 </td>
                             </tr>
                         @endforeach
+
+                        
                     </tbody>
                 </table>
             </div>

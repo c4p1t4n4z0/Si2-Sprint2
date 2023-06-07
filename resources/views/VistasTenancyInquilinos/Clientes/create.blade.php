@@ -61,7 +61,7 @@
                                 <div class="flex  ">
                                     <label for="apellido"
                                         class="text-gray-800 text-sm font-semibold mb-1  leading-tight tracking-normal">
-                                        Apellido Paterno:
+                                        Apellidos:
                                     </label>
                                     {{-- @error('nombre')
                                         <p class="text-red-500 text-xs sm:text-sm px-1 sm:px-2  sm:pr-3 font-semibold rounded-xl  w-max">

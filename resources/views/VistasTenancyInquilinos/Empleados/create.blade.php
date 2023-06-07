@@ -1,6 +1,7 @@
 @extends('VistasTenancyInquilinos.navbar')
 
 @section('Contenido')
+@vite('resources/js/cargar_imagen.js')
     <div class="   ">
         <div class="flex  p-4 border-b mb-8">
             <a class="text-white px-3 text-center h-full p-1.5 mr-4 rounded-lg font-semibold bg-slate-700"
@@ -65,16 +66,16 @@
 
 
                         <div class="flex flex-col  ">
-                            <label for="ci" class="text-gray-800 text-sm mb-1 font-semibold  ">
+                            <label for="cedula" class="text-gray-800 text-sm mb-1 font-semibold  ">
                                 Cedula de Identidad:
                             </label>
 
-                            <input id="ci"
+                            <input id="cedula"
                                 class="pl-3 text-gray-500 text-center font-normal w-full h-8 text-sm border-gray-300 rounded border
                                         focus:outline-none focus:border focus:border-blue-900 "
-                                name="ci" type="number" step="0.01" autocomplete="off" value="{{ old('cedula') }}"
+                                name="cedula" type="number" step="0.01" autocomplete="off" value="{{ old('cedula') }}"
                                 min="0" />
-                            @error('ci')
+                            @error('cedula')
                                 <p class="text-red-500 text-sm  px-1 font-semibold ">
                                     <small>*{{ $message }}</small>
                                 </p>
@@ -131,17 +132,12 @@
 
 
                     <div class="flex flex-col col-span-2   ">
-                        {{-- @include('VistaProductos.Modal_crear_proveedo') --}}
-
-                        <div class="flex justify-between mb-1">
+                         <div class="flex justify-between mb-1">
                             <label class="text-gray-800 text-sm font-semibold   leading-tight tracking-normal">
                                 Area:
                             </label>
-                            {{-- <button id="bt_crear_proveedorM" type="button"
-                                    class="text-black text-xs hover:bg-blue-200 hover:border-black border rounded px-1 ">
-                                    Registart Area</button> --}}
                         </div>
-                        <select name="area" id="select_categoria"
+                        <select name="area"
                             class="w-full mb-2  p-1 rounded-lg text-sm bg-gray-800 border  border-gray-700  text-gray-50 font-semibold focus:border-blue-500 focus:outline-none">
                             @foreach ($areas as $area)
                                 <option value="{{ $area->id }}">{{ $area->nombre }}</option>
@@ -151,24 +147,21 @@
 
 
                         <div class="flex flex-col col-span-2">
-                            <div class="flex  ">
-                                <label for="cliente"
+                                <label for="domicilio"
                                     class="text-gray-800 text-sm font-semibold mb-1  leading-tight tracking-normal">
                                     Domicilio:
                                 </label>
-
-                            </div>
                                 <textarea class="text-gray-500 font-normal pl-3 text-sm
                                 border-gray-300 rounded border
                                 focus:outline-none focus:border focus:border-blue-900 capitalize"
-                                name="domicilio"  id="domicilio" autocomplete="off"  rows="3">{{ old('domicilio') }}"</textarea>
+                                name="domicilio"  id="domicilio" autocomplete="off"  rows="3">{{ old('domicilio') }}</textarea>
 
                         </div>
 
 
                         <div class="flex flex-col ">
 
-                                <label for="email"
+                                <label for="correo"
                                     class="text-gray-800 text-sm font-semibold mb-1  leading-tight tracking-normal">
                                     Correo Electronico:
                                 </label>
@@ -177,9 +170,9 @@
                                 class=" text-gray-500 font-normal   h-8 pl-3 text-sm
                                     border-gray-300 rounded border
                                     focus:outline-none focus:border focus:border-blue-900"
-                                id="email" name="email" type="email" autocomplete="off"
-                                value="{{ old('email') }}" />
-                                @error('email')
+                                id="correo" name="correo" type="email" autocomplete="off"
+                                value="{{ old('correo') }}" />
+                                @error('correo')
                                 <p
                                     class="text-red-500 text-xs sm:text-sm px-1 sm:px-2  sm:pr-3 font-semibold rounded-xl  w-max">
                                     <small>*{{ $message }}</small>
@@ -195,7 +188,7 @@
 
                         <div class="flex flex-col ">
 
-                                <label for="password"
+                                <label for="contrasena"
                                     class="text-gray-800 text-sm font-semibold mb-1  leading-tight tracking-normal">
                                     Contrasena:
                                 </label>
@@ -204,9 +197,9 @@
                                 class="text-gray-500 font-normal   h-8 pl-3 text-sm
                                     border-gray-300 rounded border
                                     focus:outline-none focus:border focus:border-blue-900"
-                                id="password" name="password" type="password" autocomplete="off"
-                                value="{{ old('password') }}" />
-                                @error('password')
+                                id="contrasena" name="contrasena" type="password" autocomplete="off"
+                                value="{{ old('contrasena') }}" />
+                                @error('contrasena')
                                         <p class="text-red-500 text-xs sm:text-sm px-1 sm:px-2  sm:pr-3 font-semibold rounded-xl  w-max">
                                             <small>*{{ $message }}</small>
                                         </p>

@@ -9,6 +9,12 @@
                 EMPLEADO</a>
         </div>
 
+    @if (session('success'))
+    <div class="bg-green-200 text-green-800 p-2 rounded font-mono ">
+        {{ session('success') }}
+    </div>
+@endif
+
         <div class=" bg-gray-100 w-full   font-sans overflow-hidden overflow-y-auto">
             <div class="bg-white shadow-md rounded">
                 <table class="min-w-max w-full table-auto">
@@ -39,8 +45,8 @@
                                                 src="{{ asset('img/empleados/' . $emp->foto) }}" />
                                         </div>
                                         <div>
-                                            <p class="font-bold">{{ $emp->name }} {{ $emp->ap_paterno }}
-                                                {{ $emp->ap_materno }}</p>
+                                            <p class="font-bold">{{ $emp->name }} {{ $emp->apellido }}
+                                            </p>
                                             <p class="font-normal">{{ $emp->email }}</p>
                                         </div>
                                     </div>
@@ -57,7 +63,7 @@
                                 </td>
                                 <td class="py-3 px-6 text-center">
                                     <div class="flex item-center justify-center space-x-4">
-                                        <a href="#"
+                                        <a href="{{route('empleados.show', $emp->id_usuario)}}"
                                             class="w-7  h-7 rounded-lg bg-yellow-600 text-gray-200 shadow p-1
                                     transform hover:bg-yellow-700  hover:scale-110 ">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -69,8 +75,7 @@
                                             </svg>
                                         </a>
 
-                                        {{-- { route('empleados.edit', $emp->id_usuario) }} --}}
-                                        <a href="#"
+                                        <a href="{{route('empleados.edit', $emp->id_usuario)}}"
                                             class="w-7  h-7 rounded-lg bg-blue-600 text-gray-200 shadow p-1
                                    transform hover:bg-blue-700  hover:scale-110">
 
@@ -82,8 +87,7 @@
 
                                         </a>
 
-                                        {{-- route('empleados.destroy', $emp->id_usuario --}}
-                                        <form action="#" method="post">
+                                      <form action="{{route('empleados.destroy', $emp->id_usuario)}}" method="post">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit"  class="w-7  h-7 rounded-lg bg-red-600 text-gray-200 shadow p-1

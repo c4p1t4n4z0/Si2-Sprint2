@@ -9,6 +9,7 @@ export default defineConfig({
                 'resources/js/app.js',
                 'resources/js/modals.js',
                 'resources/js/modal_uno.js',
+                'resources/js/cargar_imagen.js',
             ],
             refresh: true,
         }),

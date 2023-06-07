@@ -29,9 +29,9 @@
         <div class=" flex justify-center items-center">
             <div class=" w-3/4 ">
                 {{-- <p> hola que tal</p> --}}
-                <form action="{{ route('areas.store') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('areas.update',$area->id) }}" method="post">
                     @csrf
-                    @method('POST')
+                    @method('PUT')
 
                     <div class="py-4 px-4 max-w-full m-3 pt-10  sm:m-5 border shadow-xl  rounded-xl
                                 lg:px-10  2xl:mx-20 ">
@@ -86,7 +86,7 @@
 
                             <div class=" flex flex-row-reverse justify-between  py-5 ">
                                 <button type="submit" class=" bg-gray-700 py-1 px-3 text-lg text-gray-100  rounded-xl">
-                                    Registrar
+                                  Actualizar
                                 </button>
                             </div>
 
