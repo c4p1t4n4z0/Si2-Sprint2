@@ -42,6 +42,13 @@ class EmpleadoController extends Controller
     public function store(Request $r,)
     {
         // dd($r);
+        $r->validate([
+            'nombre' => ['required','string', 'max:255'],
+            'apellido' => ['required','string', 'max:255'],
+            'cedula' => ['required', 'numeric','unique:users,ci'],
+            'correo' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
+        ]);
+
         try {
         DB::transaction(function () use ($r) {
         $usuario = new User();

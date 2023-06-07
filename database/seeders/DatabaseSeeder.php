@@ -22,23 +22,22 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // \App\Models\User::factory(10)->create();
-        // \App\Models\User::factory()->create([
-        //     joal como estas col
-        // ]);
-        $user = new User();
-        $user->name = 'admin';
-        $user->email = 'admin@gmail.com';
-        $user->email_verified_at = now();
-        $user->password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'; // password
-        $user->remember_token = Str::random(10);
-        $user->save();
 
-        $this->planes();
-        $this->beneficios();
-        $this->DetalleBeneficios();
 
-        // $this->xd();
-        // $this->areas();
+        // $user = new User();
+        // $user->name = 'admin';
+        // $user->email = 'admin@gmail.com';
+        // $user->email_verified_at = now();
+        // $user->password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'; // password
+        // $user->remember_token = Str::random(10);
+        // $user->save();
+
+        // $this->planes();
+        // $this->beneficios();
+        // $this->DetalleBeneficios();
+
+        $this->xd();
+        $this->areas();
     }
 
     public function planes(){

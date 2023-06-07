@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Beneficio;
+use App\Models\DetalleBeneficio;
 use App\Models\Empresa;
 use App\Models\Plan;
 use App\Models\Tenant;
@@ -14,20 +16,20 @@ use Illuminate\Support\Facades\Auth;
 class TenantController extends Controller
 {
     public function welcome(){
+        //enviar planes y sus beneficiso a la vista
         $planes = Plan::all();
+        foreach ($planes as $plan) {
+            $plan->beneficios = DetalleBeneficio::where('id_plan',$plan->id)
+                            ->join('beneficios as b', 'b.id', '=', 'detalle_beneficios.id_beneficio')
+                            ->get();
+        }
+
         return view('welcome',compact('planes'));
     }
+
+
     public function index()
     {
-        // $planes = Plan::all();
-        // dd(Tenant::all());
-
-        // $tenant = Empresa::join('tenants as t', 't.id', '=', 'empresas.id_tenant')
-        //         ->join('plans as p', 'p.id', '=', 'empresas.id_plan')
-        //         ->select('t.*','empresas.nombre','p.nombre as nombre_plan')
-        //         ->get();
-        // dd($tenant);
-
         $tenant = Tenant::join('empresas as e', 'e.id_tenant', '=', 'tenants.id')
         ->join('plans as p', 'p.id', '=', 'e.id_plan')
         ->select('tenants.*','e.nombre','p.nombre as nombre_plan')
